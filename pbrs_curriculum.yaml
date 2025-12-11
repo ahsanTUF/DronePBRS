@@ -1,0 +1,9 @@
+DroneBehaviour:
+  # Curriculum based on episode success rate
+  measure: reward
+  thresholds: [0.1, 0.5, 0.8]
+  min_lesson_length: 50000
+  signal_smoothing: true
+  parameters:
+    # Start with close targets, gradually increase distance
+    maxDistance: [20, 30, 40, 50]

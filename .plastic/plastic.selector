@@ -1,0 +1,4 @@
+repository "DronePBRS 2025-11-12_00-14-45/DronePBRS@18967845918348@cloud"
+  path "/"
+    br "/main"
+    co "/main"

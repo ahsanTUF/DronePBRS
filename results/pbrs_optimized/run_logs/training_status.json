@@ -1,0 +1,65 @@
+{
+    "DroneBehaviour": {
+        "checkpoints": [
+            {
+                "steps": 216865,
+                "file_path": "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-216865.onnx",
+                "reward": -0.2753310824111427,
+                "creation_time": 1763916186.7534127,
+                "auxillary_file_paths": [
+                    "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-216865.pt"
+                ]
+            },
+            {
+                "steps": 499987,
+                "file_path": "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-499987.onnx",
+                "reward": 0.02224591369177957,
+                "creation_time": 1763919780.8623085,
+                "auxillary_file_paths": [
+                    "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-499987.pt"
+                ]
+            },
+            {
+                "steps": 704353,
+                "file_path": "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-704353.onnx",
+                "reward": -1.26018471767505,
+                "creation_time": 1763922371.6448445,
+                "auxillary_file_paths": [
+                    "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-704353.pt"
+                ]
+            },
+            {
+                "steps": 999961,
+                "file_path": "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-999961.onnx",
+                "reward": 0.692197651193853,
+                "creation_time": 1763977904.084124,
+                "auxillary_file_paths": [
+                    "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-999961.pt"
+                ]
+            },
+            {
+                "steps": 1000003,
+                "file_path": "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-1000003.onnx",
+                "reward": 0.6943783562256259,
+                "creation_time": 1763977904.18966,
+                "auxillary_file_paths": [
+                    "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-1000003.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000003,
+            "file_path": "results\\pbrs_optimized\\DroneBehaviour.onnx",
+            "reward": 0.6943783562256259,
+            "creation_time": 1763977904.18966,
+            "auxillary_file_paths": [
+                "results\\pbrs_optimized\\DroneBehaviour\\DroneBehaviour-1000003.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

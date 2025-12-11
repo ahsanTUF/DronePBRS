@@ -1,0 +1,47 @@
+{
+    "DroneBehaviour": {
+        "checkpoints": [
+            {
+                "steps": 478953,
+                "file_path": "results\\PBRS_GPU_Run01\\DroneBehaviour\\DroneBehaviour-478953.onnx",
+                "reward": 0.707385586103402,
+                "creation_time": 1763647543.2815197,
+                "auxillary_file_paths": [
+                    "results\\PBRS_GPU_Run01\\DroneBehaviour\\DroneBehaviour-478953.pt"
+                ]
+            },
+            {
+                "steps": 499946,
+                "file_path": "results\\PBRS_GPU_Run01\\DroneBehaviour\\DroneBehaviour-499946.onnx",
+                "reward": 0.11291147768497467,
+                "creation_time": 1763648318.0665357,
+                "auxillary_file_paths": [
+                    "results\\PBRS_GPU_Run01\\DroneBehaviour\\DroneBehaviour-499946.pt"
+                ]
+            },
+            {
+                "steps": 500010,
+                "file_path": "results\\PBRS_GPU_Run01\\DroneBehaviour\\DroneBehaviour-500010.onnx",
+                "reward": 0.11291147768497467,
+                "creation_time": 1763648318.1626606,
+                "auxillary_file_paths": [
+                    "results\\PBRS_GPU_Run01\\DroneBehaviour\\DroneBehaviour-500010.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500010,
+            "file_path": "results\\PBRS_GPU_Run01\\DroneBehaviour.onnx",
+            "reward": 0.11291147768497467,
+            "creation_time": 1763648318.1626606,
+            "auxillary_file_paths": [
+                "results\\PBRS_GPU_Run01\\DroneBehaviour\\DroneBehaviour-500010.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}
