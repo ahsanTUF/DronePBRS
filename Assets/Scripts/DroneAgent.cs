@@ -117,8 +117,27 @@ public class DroneAgent : Agent
                 }
                 else
                 {
-                    Vector3 randomOffset = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(10f, 30f));
-                    targetTransform.position = startPos + randomOffset;
+                    // Safe Spawn Logic: Attempt to find a clear spot
+                    bool validPositionFound = false;
+                    for (int i = 0; i < 10; i++) // Try 10 times
+                    {
+                        Vector3 randomOffset = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(10f, 30f));
+                        Vector3 potentialPos = startPos + randomOffset;
+
+                        // Check for collisions (Radius 0.25f is smaller, allowing "Near Wall" spawns)
+                        if (!Physics.CheckSphere(potentialPos, 0.25f))
+                        {
+                            targetTransform.position = potentialPos;
+                            validPositionFound = true;
+                            break;
+                        }
+                    }
+
+                    // Fallback if no spot found (reset to safe default)
+                    if (!validPositionFound)
+                    {
+                        targetTransform.position = startPos + new Vector3(0, 0.5f, 10f);
+                    }
                 }
             }
         }
