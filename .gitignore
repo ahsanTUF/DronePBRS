@@ -103,3 +103,7 @@ venv_gpu/
 venv/
 __pycache__/
 *.pyc
+
+# ML-Agents Timers
+/[Aa]ssets/ML-Agents/Timers/
+Assets/ML-Agents/Timers/Main_timers.json
