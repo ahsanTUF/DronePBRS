@@ -15,9 +15,9 @@ public class DronePhysics
     public float YawSpeed { get; set; } = 3f;
     public float YawResponse { get; set; } = 5f;
 
-    // Asymmetric thrust (anti-cheese)
-    public float ReverseEfficiency { get; set; } = 0.05f;
-    public float StrafeEfficiency { get; set; } = 0.05f;
+    // Asymmetric thrust (anti-cheese) - Lowered to force forward flight preference
+    public float ReverseEfficiency { get; set; } = 0.5f;
+    public float StrafeEfficiency { get; set; } = 0.5f;
 
     // Auto-hover settings
     public bool UseAutoHover { get; set; } = true;
@@ -129,6 +129,16 @@ public class DronePhysics
         Vector3 forces = (transform.forward * forwardInput) +
                          (transform.right * strafeInput) +
                          (Vector3.up * upInput);
+
+        // DEBUG: Print inputs if they are non-zero
+        if (forces.magnitude > 0.01f)
+        {
+            // Debug.Log($"Thrust Applied: {forces * ForceMultiplier} (Inputs: F={forwardInput:F2}, S={strafeInput:F2}, U={upInput:F2})");
+        }
+        else if (Mathf.Abs(forwardInput) > 0.1f || Mathf.Abs(upInput) > 0.1f)
+        {
+            Debug.LogWarning("Thrust is ZERO despite inputs! Check ForceMultiplier or Vectors.");
+        }
 
         rigidbody.AddForce(forces * ForceMultiplier, ForceMode.Acceleration);
     }

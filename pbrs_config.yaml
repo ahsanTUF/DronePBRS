@@ -18,6 +18,6 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 1.0
-    max_steps: 1000000
-    time_horizon: 256         # Increased for better trajectory planning
+    max_steps: 5000000        # Increased to 5M for full mastery
+    time_horizon: 256
     summary_freq: 10000

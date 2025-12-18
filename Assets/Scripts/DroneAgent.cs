@@ -54,8 +54,9 @@ public class DroneAgent : Agent
     private int groundHitCount;
     private ActionBuffers heuristicActions;
     private float moveStrafe, moveUp, moveForward, moveYaw;
+    private Quaternion startRot;
 
-    new void Awake()
+    public override void Initialize()
     {
         rBody = GetComponent<Rigidbody>();
         behaviorParameters = GetComponent<BehaviorParameters>();
@@ -65,10 +66,16 @@ public class DroneAgent : Agent
         SyncPhysicsSettings();
         SyncRewardSettings();
         startPos = transform.position;
+        startRot = transform.rotation;
         heuristicActions = new ActionBuffers(behaviorParameters.BrainParameters.ActionSpec);
         rBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         if (targetTransform != null) targetStartPos = targetTransform.position;
     }
+
+    [Header("Spawn Scheduler")]
+    public bool useSpawnScheduler = false;
+    public float spawnDistance = 10f;
+    private int spawnIndex = 0;
 
     public override void OnEpisodeBegin()
     {
@@ -79,20 +86,40 @@ public class DroneAgent : Agent
         moveUp = 0f;
         moveForward = 0f;
         moveYaw = 0f;
-        transform.position = startPos;
-        float initialYaw = useRandomRotation ? Random.Range(0f, 360f) : 0f;
-        transform.rotation = Quaternion.Euler(0f, initialYaw, 0f);
 
-        if (targetTransform != null)
+        if (useSpawnScheduler && targetTransform != null)
         {
-            if (useEasyMode)
+            // Deterministic spawn pattern: Behind -> Front -> Left -> Right (Relative to Target Facing)
+            Vector3 spawnOffset = Vector3.zero;
+            switch (spawnIndex)
             {
-                targetTransform.position = targetStartPos;
+                case 0: spawnOffset = -targetTransform.forward * spawnDistance; break; // Behind (-Z relative to target)
+                case 1: spawnOffset = targetTransform.forward * spawnDistance; break;  // Front (+Z)
+                case 2: spawnOffset = -targetTransform.right * spawnDistance; break;   // Left (-X)
+                case 3: spawnOffset = targetTransform.right * spawnDistance; break;    // Right (+X)
             }
-            else
+
+            transform.position = targetTransform.position + spawnOffset + Vector3.up * 2f; // Ensure height
+            transform.rotation = startRot; // Maintain scene rotation
+            spawnIndex = (spawnIndex + 1) % 4;
+        }
+        else
+        {
+            transform.position = startPos;
+            float initialYaw = useRandomRotation ? Random.Range(0f, 360f) : 0f;
+            transform.rotation = Quaternion.Euler(0f, initialYaw, 0f);
+
+            if (targetTransform != null)
             {
-                Vector3 randomOffset = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(10f, 30f));
-                targetTransform.position = startPos + randomOffset;
+                if (useEasyMode)
+                {
+                    // Target stays where dragged (no reset)
+                }
+                else
+                {
+                    Vector3 randomOffset = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(10f, 30f));
+                    targetTransform.position = startPos + randomOffset;
+                }
             }
         }
 
