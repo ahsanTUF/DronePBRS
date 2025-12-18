@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SmoothFollowCamera
   target: {fileID: 716587912}
   height: 1
-  distance: 1.5
+  distance: 2.5
   followSpeed: 10
   rotationSpeed: 15
 --- !u!1 &410087039
@@ -1378,7 +1378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094516478756662214, guid: db956dea183786644876e5d23c52c563, type: 3}
       propertyPath: useEasyMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5094516478756662214, guid: db956dea183786644876e5d23c52c563, type: 3}
       propertyPath: groundPenalty
@@ -1406,11 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 1876940738}
     - target: {fileID: 5094516478756662214, guid: db956dea183786644876e5d23c52c563, type: 3}
       propertyPath: useRandomRotation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5094516478756662214, guid: db956dea183786644876e5d23c52c563, type: 3}
       propertyPath: useSpawnScheduler
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6433316547028308125, guid: db956dea183786644876e5d23c52c563, type: 3}
       propertyPath: m_LocalRotation.w
