@@ -79,8 +79,18 @@ The configuration file for the ML-Agents trainer.
 *   Python environment with `mlagents` installed.
 
 ### Training
-To start training the agent, open a terminal in the project root and run:
+To start training the agent, open a terminal in the project root.
 
+**1. Activate the Virtual Environment:**
+```bash
+# Windows PowerShell
+.\venv_gpu\Scripts\Activate.ps1
+
+# Windows CMD
+venv_gpu\Scripts\activate.bat
+```
+
+**2. Run the Training Command:**
 ```bash
 mlagents-learn pbrs_config.yaml --run-id=DronePBRS_01
 ```

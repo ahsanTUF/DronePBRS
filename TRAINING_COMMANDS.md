@@ -2,6 +2,17 @@
 
 ## Training Commands
 
+### 0. Activate Virtual Environment (REQUIRED)
+You **must** activate the Python environment before running any mlagents commands.
+
+```bash
+# Windows PowerShell
+.\venv_gpu\Scripts\Activate.ps1
+
+# Windows CMD
+venv_gpu\Scripts\activate.bat
+```
+
 ### Start New Training
 ```bash
 mlagents-learn pbrs_config.yaml --run-id=pbrs_v1
