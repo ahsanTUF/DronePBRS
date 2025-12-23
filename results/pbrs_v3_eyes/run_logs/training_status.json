@@ -2,15 +2,6 @@
     "DroneBehaviour": {
         "checkpoints": [
             {
-                "steps": 499929,
-                "file_path": "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-499929.onnx",
-                "reward": -6.148499903471573,
-                "creation_time": 1765487861.6789792,
-                "auxillary_file_paths": [
-                    "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-499929.pt"
-                ]
-            },
-            {
                 "steps": 999978,
                 "file_path": "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-999978.onnx",
                 "reward": -2.08509115468372,
@@ -36,15 +27,33 @@
                 "auxillary_file_paths": [
                     "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-1763029.pt"
                 ]
+            },
+            {
+                "steps": 1999945,
+                "file_path": "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-1999945.onnx",
+                "reward": -1.3593929675390135,
+                "creation_time": 1766468419.404996,
+                "auxillary_file_paths": [
+                    "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-1999945.pt"
+                ]
+            },
+            {
+                "steps": 2020279,
+                "file_path": "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-2020279.onnx",
+                "reward": -1.6991983536216948,
+                "creation_time": 1766468587.3898757,
+                "auxillary_file_paths": [
+                    "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-2020279.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 1763029,
+            "steps": 2020279,
             "file_path": "results\\pbrs_v3_eyes\\DroneBehaviour.onnx",
-            "reward": -2.1437873238418983,
-            "creation_time": 1765498901.1060994,
+            "reward": -1.6991983536216948,
+            "creation_time": 1766468587.3898757,
             "auxillary_file_paths": [
-                "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-1763029.pt"
+                "results\\pbrs_v3_eyes\\DroneBehaviour\\DroneBehaviour-2020279.pt"
             ]
         }
     },
